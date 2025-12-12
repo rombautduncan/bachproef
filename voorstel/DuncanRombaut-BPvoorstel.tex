@@ -1,0 +1,44 @@
+%==============================================================================
+% Sjabloon onderzoeksvoorstel bachproef
+%==============================================================================
+\documentclass[twocolumn]{hogent-article} % twocolumn voor kolommen
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{microtype}   % verbetert letterafstand en regelbreking
+\usepackage[english, dutch]{babel}  % correcte koppeltekens in Nederlands
+
+% Kolom instellingen
+\setlength{\columnsep}{20pt} % iets grotere kolomafstand om overlapping te voorkomen
+
+\addbibresource{voorstel.bib}
+
+\studyprogramme{Professionele bachelor toegepaste informatica}
+\course{Bachelorproef}
+\assignmenttype{Onderzoeksvoorstel}
+
+\academicyear{2022-2023}
+\projectrepo{https://github.com/rombautduncan/bachproef.git}
+\title{Integratie van Code- en SQL-Analyse: Ontwikkeling van een Applicatie voor Automatisch Opschonen en Optimaliseren}
+
+\author{Duncan Rombaut}
+\email{duncan.rombaut@student.hogent.be}
+
+\supervisor[Co-promotor]{Karine Van Driessche}
+
+\specialisation{Mobile \& Enterprise development}
+\keywords{Codekwaliteit, SQL-optimalisatie, Automatische analyse, Python, Softwareontwikkeling}
+
+\begin{document}
+    \sloppy % laat LaTeX flexibel zijn met regelafbrekingen en spatiëring
+    
+    \begin{abstract}
+        Deze bachelorproef onderzoekt de ontwikkeling van een geïntegreerde applicatie die automatisch programmeercode en SQL-query’s analyseert, opschoont en optimaliseert. Moderne softwareprojecten produceren grote hoeveelheden code en databewerkingstaken, waarbij inefficiënties, fouten en inconsistenties vaak leiden tot hogere ontwikkelkosten en moeilijk onderhoud. Het doel van dit onderzoek is te bepalen in welke mate een gecombineerde analysetool ontwikkelaars kan ondersteunen door veelvoorkomende fouten, code smells en suboptimale SQL-structuren te detecteren en automatisch verbeteringen voor te stellen. Hiertoe wordt een prototype ontwikkeld dat gebruikmaakt van bestaande tools zoals Black en Pylint voor Python-codeanalyse en sqlparse voor SQL. De methodologie omvat het uitvoeren van syntaxis- en kwaliteitscontroles, het identificeren van inefficiënties en het genereren van overzichtelijke rapporten met aanbevelingen en geoptimaliseerde codeversies. Verwacht wordt dat de tool veelvoorkomende problemen systematisch kan detecteren, de leesbaarheid en onderhoudbaarheid van code verbetert en de tijd besteed aan manuele code-review en foutopsporing vermindert. De resultaten van dit onderzoek hebben meerwaarde voor softwareontwikkelaars en organisaties die streven naar efficiëntere workflows, hogere codekwaliteit en geautomatiseerde kwaliteitsbewaking binnen hun ontwikkelprocessen.
+    \end{abstract}
+    
+    \tableofcontents
+    
+    \input{voorstel-inhoud} % hier staat je inleiding, literatuurstudie, methodologie en resultaten
+    
+    \printbibliography[heading=bibintoc]
+    
+\end{document}

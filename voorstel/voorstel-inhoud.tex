@@ -1,84 +1,42 @@
 %---------- Inleiding ---------------------------------------------------------
-
-% TODO: Is dit voorstel gebaseerd op een paper van Research Methods die je
-% vorig jaar hebt ingediend? Heb je daarbij eventueel samengewerkt met een
-% andere student?
-% Zo ja, haal dan de tekst hieronder uit commentaar en pas aan.
-
-%\paragraph{Opmerking}
-
-% Dit voorstel is gebaseerd op het onderzoeksvoorstel dat werd geschreven in het
-% kader van het vak Research Methods dat ik (vorig/dit) academiejaar heb
-% uitgewerkt (met medesturent VOORNAAM NAAM als mede-auteur).
-% 
-
 \section{Inleiding}%
 \label{sec:inleiding}
 
-Waarover zal je bachelorproef gaan? Introduceer het thema en zorg dat volgende zaken zeker duidelijk aanwezig zijn:
+Deze bachelorproef richt zich op het ontwikkelen van een geïntegreerde applicatie die automatisch programmeercode en SQL-query's analyseert, opschoont en optimaliseert. In moderne softwareprojecten ontstaan door de omvang en complexiteit van code regelmatig inefficiënties, fouten en inconsistenties, wat leidt tot hogere ontwikkelkosten, trager presterende systemen en moeilijk onderhoud. Dit probleem is vooral relevant voor softwareontwikkelaars binnen middelgrote en grote IT-teams die regelmatig werken met Python en relationele databases.  
 
-\begin{itemize}
-  \item kaderen thema
-  \item de doelgroep
-  \item de probleemstelling en (centrale) onderzoeksvraag
-  \item de onderzoeksdoelstelling
-\end{itemize}
+De centrale onderzoeksvraag van deze bachelorproef luidt: \textit{In welke mate kan een applicatie die automatische analyse en optimalisatie van code en SQL uitvoert, bijdragen aan het verbeteren van codekwaliteit en het reduceren van ontwikkeltijd in softwareprojecten?} Om deze vraag te beantwoorden worden zowel deelvragen met betrekking tot het probleemdomein als het oplossingsdomein geformuleerd. Wat betreft het probleemdomein wordt onderzocht welke veelvoorkomende problemen, fouten en inefficiënties voorkomen in Python-code binnen middelgrote en grote IT-teams, welke inefficiënties optreden in SQL-query's in relationele databases en wat de gevolgen zijn van slecht gestructureerde code en suboptimale SQL-query's voor onderhoud, ontwikkeltijd en systeemprestaties. Wat betreft het oplossingsdomein richt het onderzoek zich op het identificeren van bestaande tools en analysemethoden die fouten, code smells en inefficiënties in Python-code detecteren en corrigeren, welke hulpmiddelen beschikbaar zijn voor het opsporen en optimaliseren van inefficiënte SQL-query's, en hoe een geïntegreerde applicatie kan worden ontworpen die zowel Python-code als SQL-query's simultaan analyseert en concrete verbeteringen voorstelt.
 
-Denk er aan: een typische bachelorproef is \textit{toegepast onderzoek}, wat betekent dat je start vanuit een concrete probleemsituatie in bedrijfscontext, een \textbf{casus}. Het is belangrijk om je onderwerp goed af te bakenen: je gaat voor die \textit{ene specifieke probleemsituatie} op zoek naar een goede oplossing, op basis van de huidige kennis in het vakgebied.
+Het doel van het onderzoek is het ontwikkelen van een proof-of-concept applicatie die ontwikkelaars ondersteunt bij het opsporen van veelvoorkomende fouten, inefficiënte patronen en suboptimale SQL-query's. Het concrete eindresultaat van deze bachelorproef omvat zowel een werkend prototype als een gedocumenteerde evaluatie van de effectiviteit van het systeem. Deze applicatie biedt inzicht in verbeterpunten en genereert gestructureerde aanbevelingen, waardoor de tijd die ontwikkelaars besteden aan handmatige code-review en foutopsporing wordt verminderd en de functionaliteit en betrouwbaarheid van de code behouden blijven. De inleiding vormt zo de basis voor de literatuurstudie, waarin relevante inzichten uit het vakgebied worden besproken, en voor de methodologie, waarin de concrete stappen en onderzoekstechnieken worden beschreven die nodig zijn om zowel de hoofd- als de deelvragen te beantwoorden.
 
-De doelgroep moet ook concreet en duidelijk zijn, dus geen algemene of vaag gedefinieerde groepen zoals \emph{bedrijven}, \emph{developers}, \emph{Vlamingen}, enz. Je richt je in elk geval op it-professionals, een bachelorproef is geen populariserende tekst. Eén specifiek bedrijf (die te maken hebben met een concrete probleemsituatie) is dus beter dan \emph{bedrijven} in het algemeen.
-
-Formuleer duidelijk de onderzoeksvraag! De begeleiders lezen nog steeds te veel voorstellen waarin we geen onderzoeksvraag terugvinden.
-
-Schrijf ook iets over de doelstelling. Wat zie je als het concrete eindresultaat van je onderzoek, naast de uitgeschreven scriptie? Is het een proof-of-concept, een rapport met aanbevelingen, \ldots Met welk eindresultaat kan je je bachelorproef als een succes beschouwen?
 
 %---------- Stand van zaken ---------------------------------------------------
-
 \section{Literatuurstudie}%
 \label{sec:literatuurstudie}
 
-Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
+De literatuur toont aan dat zowel programmeercode als SQL-query's gevoelig zijn voor terugkerende problemen zoals syntaxfouten, code smells, inefficiënties en inconsistenties. Slecht gestructureerde code verhoogt de technische schuld, vertraagt het ontwikkelproces en leidt tot hogere onderhoudskosten \autocite{Guo2011,Zazworka2013}. Voor programmeercode blijken tools zoals linters (Pylint, Flake8), formatters (Black, Prettier) en statische analysetools (SonarQube, mypy) effectief in het detecteren van syntax- en typefouten, code smells en anti-patterns \autocite{Campbell2013,TanBockisch2019}. Voor SQL-query's bestaan soortgelijke hulpmiddelen, zoals sqlparse en sqlfluff, die inefficiënte structuren, ontbrekende filters en potentieel foutieve joins kunnen detecteren \autocite{Muse2020,OWASP2021}.  
 
-Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
-
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Hykes2013}! Denk zeker goed na welke werken je refereert en waarom.
-
-Draag zorg voor correcte literatuurverwijzingen! Een bronvermelding hoort thuis \emph{binnen} de zin waar je je op die bron baseert, dus niet er buiten! Maak meteen een verwijzing als je gebruik maakt van een bron. Doe dit dus \emph{niet} aan het einde van een lange paragraaf. Baseer nooit teveel aansluitende tekst op eenzelfde bron.
-
-Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle nodige info aanwezig is om de bron terug te vinden (zoals uitvoerig besproken in de lessen Research Methods).
-
-% Voor literatuurverwijzingen zijn er twee belangrijke commando's:
-% \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
-%   geen onderdeel is van de zin.
-% \textcite{KEY} => Auteur (jaartal)  Gebruik dit als de auteursnaam wel een
-%   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
-%   ...'')
-
-Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
+Hoewel deze tools afzonderlijk nuttig zijn, ontbreekt er vaak een geïntegreerde workflow die zowel Python-code als SQL-query's simultaan analyseert en automatisch verbetert. Dit biedt ruimte voor onderzoek naar de ontwikkeling van een applicatie die deze verschillende analysetechnieken combineert en ontwikkelaars ondersteunt met concrete aanbevelingen en geoptimaliseerde codevoorstellen.  
 
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
 \label{sec:methodologie}
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
+Het onderzoek volgt een toegepaste onderzoeksaanpak, waarbij een prototype-applicatie wordt ontwikkeld en getest in realistische scenario's. De methodologie omvat de volgende stappen:  
 
-Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
+1. \textbf{Analyse van bestaande tools en bibliotheken:} Er wordt onderzocht welke linters, statische analysetools en SQL-analysetools geschikt zijn voor integratie in het prototype.  
 
-Vermijd onderzoekstechnieken die geen objectieve, meetbare resultaten kunnen opleveren. Enquêtes, bijvoorbeeld, zijn voor een bachelorproef informatica meestal \textbf{niet geschikt}. De antwoorden zijn eerder meningen dan feiten en in de praktijk blijkt het ook bijzonder moeilijk om voldoende respondenten te vinden. Studenten die een enquête willen voeren, hebben meestal ook geen goede definitie van de populatie, waardoor ook niet kan aangetoond worden dat eventuele resultaten representatief zijn.
+2. \textbf{Ontwikkeling van een prototype:} De applicatie combineert tools zoals Black en Pylint voor Python-code en sqlparse voor SQL. Het prototype voert syntax- en kwaliteitscontroles uit, detecteert inefficiënte patronen en genereert overzichtelijke aanbevelingen voor verbeteringen.  
 
-Uit dit onderdeel moet duidelijk naar voor komen dat je bachelorproef ook technisch voldoen\-de diepgang zal bevatten. Het zou niet kloppen als een bachelorproef informatica ook door bv.\ een student marketing zou kunnen uitgevoerd worden.
+3. \textbf{Testen en evaluatie:} Het prototype wordt getest op voorbeeldprojecten met realistische code- en SQL-structuren. De effectiviteit wordt gemeten aan de hand van het aantal gedetecteerde problemen, verbeteringen in codekwaliteit en de tijdsreductie voor manuele code-review.  
 
-Je beschrijft ook al welke tools (hardware, software, diensten, \ldots) je denkt hiervoor te gebruiken of te ontwikkelen.
-
-Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
+4. \textbf{Deliverables en planning:} Het eindresultaat bestaat uit een werkend prototype, een evaluatierapport met analyse van resultaten en aanbevelingen voor verdere toepassing van de tool. De tijdsplanning omvat de analyse van bestaande tools (2 weken), prototypeontwikkeling (4 weken), testen en evaluatie (3 weken) en documentatie en rapportage (2 weken).  
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
 
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
+Het onderzoek verwacht dat het prototype in staat zal zijn om veelvoorkomende problemen in zowel Python-code als SQL-query's op een reproduceerbare manier te detecteren en gestructureerde aanbevelingen voor verbetering te genereren. Voor Python-code omvat dit het opsporen van syntax- en typefouten, ongebruikte variabelen, inconsistenties in formatting en code smells zoals te complexe functies of duplicatie. Voor SQL-query's wordt verwacht dat inefficiënte joins, onnodige subquery's en ontbrekende filtervoorwaarden systematisch kunnen worden geïdentificeerd.  
 
-Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw bachelorproef voor een meerwaarde?
+De applicatie zal deze bevindingen overzichtelijk presenteren, waarbij ontwikkelaars direct inzicht krijgen in verbeterpunten en de mogelijkheid hebben om automatisch verbeterde code te bekijken. Hierdoor wordt verwacht dat de tijd die ontwikkelaars besteden aan handmatige code-review en foutopsporing aanzienlijk zal verminderen, terwijl de functionaliteit en betrouwbaarheid van de code behouden blijven.  
 
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
-
+Het onderzoek levert een proof-of-concept op dat aantoont dat een geïntegreerde analysetool een duidelijke meerwaarde kan bieden voor softwareontwikkelaars en organisaties die streven naar efficiëntere workflows, hogere codekwaliteit en geautomatiseerde kwaliteitsbewaking. De resultaten kunnen daarnaast leiden tot verdere onderzoeksvragen, bijvoorbeeld over de toepassing van AI-gestuurde code-analyse of uitgebreidere refactoringstrategieën in complexe softwareprojecten.
